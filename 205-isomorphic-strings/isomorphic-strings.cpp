@@ -1,10 +1,9 @@
 class Solution {
 public:
     bool isIsomorphic(string s, string t) {
-        unordered_map<char,int>m;
-        unordered_map<char,int>p;
-        m[256]={0};
-        p[256]={0};
+
+        int m[256]={0};
+       int  p[256]={0};
     
         for(int i=0;i<s.size();i++){
             if(m[s[i]]!=p[t[i]]){
