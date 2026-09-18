@@ -2,17 +2,23 @@ class Solution {
 public:
     int maxArea(vector<int>& a) {
         int n=a.size();
-        int st=0,end=n-1;
-       int maxarea=INT_MIN;
-        while(st<end){
-            int w=end-st;
-           int ht=min(a[st],a[end]);
-            int area=w*ht;
-            maxarea= max(area,maxarea);
-            a[st]<a[end]?st++:end--;
-                
+       int s=0;int e= n-1;
+       int maxi = INT_MIN;
+       int mani=INT_MIN;
+       while(s<=e){
+        int w = e-s;
+        mani = min(a[s],a[e]);
+        maxi = max(maxi,mani*w);
+        if(a[s]>=a[e]){
+            e--;
         }
-        return maxarea;
+        else{
+            s++;
+        }
+
+
+       }
+       return maxi;
 
         
     }
